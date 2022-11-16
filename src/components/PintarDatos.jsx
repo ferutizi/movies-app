@@ -1,3 +1,4 @@
+import './PintarDatos.css';
 import { useEffect, useState } from 'react';
 import Card from './Card';
 
@@ -6,7 +7,7 @@ const PintarDatos = () => {
   
     const consumirApi = useEffect(() => {
         fetchAPI();
-    }, [])
+    }, []);
 
     const [movies, setMovies] = useState({});
   
