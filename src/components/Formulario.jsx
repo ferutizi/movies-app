@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useFormulario from "../hooks/useFormulario";
 
 const Formulario = ({ setSearch }) => {

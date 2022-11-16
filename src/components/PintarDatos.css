@@ -1,5 +1,4 @@
 .movies__container {
-    background-color: red;
     max-width: 1300px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

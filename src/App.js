@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PintarDatos from './components/PintarDatos';
-import Formulario from './components/Formulario';
+import Nav from './components/Nav';
 
 function App() {
   const [movies, setMovies] = useState({});
@@ -8,8 +8,7 @@ function App() {
   return (
     <>
       <div className='App'>
-        <h1>Movies</h1>
-        <Formulario setSearch={setSearch}/>
+        <Nav setSearch={setSearch}/>
         <PintarDatos movies={movies} setMovies={setMovies} search={search}/>
       </div>    
     </>
