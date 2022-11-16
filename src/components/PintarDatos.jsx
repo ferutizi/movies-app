@@ -2,20 +2,37 @@ import './PintarDatos.css';
 import { useEffect, useState } from 'react';
 import Card from './Card';
 
-const PintarDatos = () => {
-    const ApiKey = '436298427a108d3cea382bfb7e2d4fa0';
+const PintarDatos = ({ movies, setMovies, search }) => {
+    const apiKey = '436298427a108d3cea382bfb7e2d4fa0';
   
     const consumirApi = useEffect(() => {
         fetchAPI();
     }, []);
 
-    const [movies, setMovies] = useState({});
-  
+    const searchMovie = useEffect(() => {
+        searchAPI();
+    }, [search]);
 
     const fetchAPI = async () => {
-        const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${ApiKey}`);
-        const data = await res.json();
-        setMovies(data);
+        try {
+            const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`);
+            const data = await res.json();
+            setMovies(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const searchAPI = async () => {
+        if(search) {
+            try {
+                const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${search}&page=1`);
+                const data = await res.json();
+                setMovies(data);        
+            } catch (error) {
+                console.log(error);
+            }
+        };
     }
 
     return(

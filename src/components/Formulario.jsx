@@ -1,15 +1,13 @@
 import { useState } from "react";
 import useFormulario from "../hooks/useFormulario";
 
-const Formulario = () => {
+const Formulario = ({ setSearch }) => {
 
     const [formulario, handleChange, reset] = useFormulario({name: ''})
-    const [search, setSearch] = useState();
-    const {name} = formulario;
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSearch(formulario);
+        setSearch(formulario.name);
         reset();
     }
 
@@ -20,7 +18,7 @@ const Formulario = () => {
                 type='text'
                 placeholder="search"
                 onChange={handleChange}
-                value={name}
+                value={formulario.name}
                 autoFocus
             />
             <button type="submit">search</button>
