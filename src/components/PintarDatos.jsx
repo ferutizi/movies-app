@@ -24,7 +24,7 @@ const PintarDatos = () => {
                 ? 
                     <div className='movies__container'>
                         {movies.results.map(item =>
-                            <Card movie={item} movies={movies} />)
+                            <Card movie={item} movies={movies} key={item.id}/>)
                         }
                     </div>
                 : <p>Loading...</p>

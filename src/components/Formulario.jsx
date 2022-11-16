@@ -21,7 +21,7 @@ const Formulario = () => {
                 placeholder="search"
                 onChange={handleChange}
                 value={name}
-                autofocus
+                autoFocus
             />
             <button type="submit">search</button>
         </form>
