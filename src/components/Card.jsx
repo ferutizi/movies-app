@@ -7,8 +7,10 @@ const Card = ({ movie, movies }) => {
     return(
         <>
             {movies.results ?
-                <div className='card__container'>
-                    <img src={`${base_url}/${size_url}/${movie.poster_path}`} alt={movie.title}></img>
+                <div className='cont'>
+                    <div className='card__container'>
+                        <img src={`${base_url}/${size_url}/${movie.poster_path}`} alt={movie.title}></img>
+                    </div>
                 </div>
             : null}
         </>

@@ -13,14 +13,15 @@ const Formulario = ({ setSearch }) => {
     return(
         <form onSubmit={handleSubmit}>
             <input 
-                name="name"
+                name='name'
                 type='text'
-                placeholder="search"
+                placeholder='search'
                 onChange={handleChange}
                 value={formulario.name}
                 autoFocus
+                className='nav__input'
             />
-            <button type="submit">search</button>
+            <button type='submit' className='input__button'>Search</button>
         </form>
     );
 }

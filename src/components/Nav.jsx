@@ -1,10 +1,13 @@
+import './Nav.css';
 import Formulario from "./Formulario";
+import Filters from "./Filters";
 
 const Nav = ({ setSearch }) => {
     return(
         <div className="nav">
-            <h2>find the perfect movie for today</h2>
+            <h1 className='nav__title'>Find the perfect movie for today</h1>
             <Formulario setSearch={setSearch}/>
+            <Filters />
         </div>
     );
 }
