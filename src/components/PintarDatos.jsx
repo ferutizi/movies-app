@@ -1,4 +1,4 @@
-import './PintarDatos.css';
+import './PintarDatos.scss';
 import { useEffect } from 'react';
 import Card from './Card';
 

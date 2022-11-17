@@ -1,4 +1,4 @@
-import './Nav.css';
+import './Nav.scss';
 import Formulario from "./Formulario";
 import Filters from "./Filters";
 
