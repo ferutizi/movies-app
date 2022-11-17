@@ -18,24 +18,32 @@
     transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.5s;
 }
 
-
 .description__title {
     font-size: 16px;
 }
 
 .card__arrow {
+    color: #fff;
+    width: 0;
+    margin: 0;
+    text-shadow: 2px 2px 2px #000;
     position: relative;
-    top: -50px;
+    top: -5px; 
+    right: -150px;
     rotate: -90deg;
-    z-index: 1;
+    font-size: 20px;
+    transition: all ease-in-out 0.3s;
 }
 
 .card__description:hover {
-    color: inherit;
     background-color: rgba(0,0,0,0.7);
-    text-shadow: inherit;
+    .description__title, .description__text {
+        color: #fff;
+        text-shadow: 2px 2px 2px #000;
+    }
     .card__arrow {
         color: transparent;
         text-shadow: none;
     }
 }
+
