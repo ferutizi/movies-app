@@ -15,7 +15,7 @@ const Formulario = ({ setSearch }) => {
             <input 
                 name='name'
                 type='text'
-                placeholder='search'
+                placeholder='Movie...'
                 onChange={handleChange}
                 value={formulario.name}
                 autoFocus

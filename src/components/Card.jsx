@@ -7,9 +7,11 @@ const Card = ({ movie, movies }) => {
     return(
         <>
             {movies.results ?
-                <div className='cont'>
-                    <div className='card__container'>
-                        <img src={`${base_url}/${size_url}/${movie.poster_path}`} alt={movie.title}></img>
+                <div className='card__container'>
+                    <img src={`${base_url}/${size_url}/${movie.poster_path}`} alt={movie.title}></img>
+                    <div className='card__description'>
+                        <h2 className='description__title'>{movie.title.substr(0, 32, '...')}</h2>
+                        <p className='description__text'>{movie.overview.substr(0, 100)} ...</p>
                     </div>
                 </div>
             : null}
