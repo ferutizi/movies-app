@@ -1,7 +1,8 @@
 import './PintarDatos.scss';
 import { useEffect } from 'react';
-import Card from './Card';
-import { Link, Route, Routes, useParams } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Movie from '../pages/Movie';
+import Home from '../pages/Home';
 
 const PintarDatos = ({ movies, setMovies, search }) => {
     const apiKey = '436298427a108d3cea382bfb7e2d4fa0';
@@ -36,39 +37,14 @@ const PintarDatos = ({ movies, setMovies, search }) => {
         };
     }
 
-    const Movie = () => {
-        const { movie_name } = useParams();
-        return(
-            <>
-            <h2>hola</h2>
-            <p>{movie_name}</p>
-            </>
-        )
-    }
-
-    const Home = () => {
-        return(
-            <>
-            {movies.results 
-                ? 
-                    <div className='movies__container'>
-                        {movies.results.map(item =>
-                            <Card movie={item} movies={movies} key={item.id}/>)
-                        }
-                    </div>
-                : <p>Loading...</p>
-            }
-            </>
-        )
-    }
+    console.log(movies)
 
     return(
         <>
             <Routes>
-                <Route path='/' element={<Home />}></Route>
-                <Route path='/:movie_name' element={<Movie />} />
+                <Route path='/' element={<Home movies={movies}/>} />
+                <Route path='/:movie_name' element={<Movie movies={movies} />} />
             </Routes>
-            
         </>
     );
 }
