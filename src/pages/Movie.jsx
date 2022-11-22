@@ -2,17 +2,20 @@ import { useParams } from "react-router-dom";
 
 
 const Movie = ({ movies }) => {
+    const base_url = 'https://image.tmdb.org/t/p/';
+    const size_url = 'w500';
+
     const { movie_name } = useParams();
+    const selectedMovie = movies.results.filter(movie => movie.title == movie_name);
+    const details = selectedMovie[0];
+
+    console.log(details)
+
     return(
         <>
-            {movies.results 
-                ? 
-                    <>
-                        <p>{movie_name}</p>
-                        <p>{movies.results[0].id}</p>
-                    </>
-                : 'err'
-            }
+            <img src={`${base_url}/${size_url}/${details.backdrop_path}`} alt={details.title}></img>
+            <h2>{details.title}</h2>
+            <p>{details.overview} ...</p>
         </>
     );
 }

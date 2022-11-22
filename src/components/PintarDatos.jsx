@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Movie from '../pages/Movie';
 import Home from '../pages/Home';
 
-const PintarDatos = ({ movies, setMovies, search }) => {
+const PintarDatos = ({ movies, setMovies, search, movie }) => {
     const apiKey = '436298427a108d3cea382bfb7e2d4fa0';
   
     const consumirApi = useEffect(() => {
@@ -43,7 +43,7 @@ const PintarDatos = ({ movies, setMovies, search }) => {
         <>
             <Routes>
                 <Route path='/' element={<Home movies={movies}/>} />
-                <Route path='/:movie_name' element={<Movie movies={movies} />} />
+                <Route path='/:movie_name' element={<Movie movies={movies} movie={movie} />} />
             </Routes>
         </>
     );
