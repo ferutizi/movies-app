@@ -12,11 +12,15 @@ const Movie = ({ movies }) => {
     console.log(details)
 
     return(
-        <>
-            <img src={`${base_url}/${size_url}/${details.backdrop_path}`} alt={details.title}></img>
-            <h2>{details.title}</h2>
-            <p>{details.overview} ...</p>
-        </>
+        <div className="movies__details">
+            <div className="details__container">
+                <img className="details__img" src={`${base_url}/${size_url}/${details.backdrop_path}`} alt={details.title} />
+            </div>
+            <div className="details__container">
+                <h2 className="details__title">{details.title}</h2>
+                <p className="details__overview">{details.overview} ...</p>
+            </div>
+        </div>
     );
 }
 

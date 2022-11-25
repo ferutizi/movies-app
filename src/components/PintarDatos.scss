@@ -1,9 +1,60 @@
 .movies__container {
     max-width: 1300px;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 4rem 1.5rem;
     margin: 4rem 4rem;
+}
+
+.movies__details {
+    max-width: 1300px;
+    display: grid;
+    height: calc(100vh - 160px);
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.details__img {
+    box-shadow: 3px 3px 6px 3px #000;
+}
+
+.details__container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 2rem;
+}
+
+.details__title {
+    font-size: 32px;
+}
+
+.details__overview {
+    font-size: 20px;
+}
+
+@media (max-width: 960px) {
+    .movies__details {
+        max-width: 960px;
+        display: flex;
+        flex-wrap: wrap;
+        height: calc(100vh - 160px);
+        align-items: center;
+        justify-content: center;
+    }
+    .details__title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 570px) {
+    .details__img {
+        width: 300px;
+    }
+    .details__title {
+        margin-top: 0;
+    }
 }
